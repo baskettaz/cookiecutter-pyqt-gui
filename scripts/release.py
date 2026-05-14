@@ -8,7 +8,7 @@ import tomllib
 from pathlib import Path
 
 
-def _run(*cmd: str) -> None:
+def execute(*cmd: str) -> None:
     print(f"$ {' '.join(cmd)}")  # noqa: T201
     subprocess.run(cmd, check=True)
 
@@ -20,10 +20,10 @@ def main() -> None:
     version    = pyproject["project"]["version"]
     tag        = f"v{version}"
     notes_path = Path(f"CHANGELOG/{version}.md")
+    lines      = notes_path.read_text().splitlines(keepends = True)
+    title      = f"{name} {version}"
     # fmt: on
 
-    lines = notes_path.read_text().splitlines(keepends=True)
-    title = f"{name} {version}"
     if lines and lines[0].startswith("# "):
         title = lines[0].lstrip("# ").strip()
         lines = lines[1:]
@@ -31,10 +31,27 @@ def main() -> None:
             lines = lines[1:]
     notes = "".join(lines).rstrip()
 
-    _run("git", "tag", "-a", tag, "-m", f"Release {tag}")
-    _run("git", "push", "origin", tag)
-    _run(
-        "gh" 
+    # fmt: off
+    # CMD 1: Create an unsigned
+    execute(
+    "git",
+        "tag",
+        "-a",
+        tag,
+        "-m",
+        f"Release {tag}"
+    )
+
+    # CMD 2: Push tag to remote server
+    execute(
+        "git",
+        "push",
+        "origin",
+        tag
+    )
+
+    execute(
+        "gh",
         "release",
         "create",
         tag,
@@ -44,6 +61,7 @@ def main() -> None:
         "--notes",
         notes,
     )
+    # fmt: on
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ from typing import Generator
 
 # fmt: off
 TEMPLATE_DIR  = Path(__file__).parent.parent / "{{cookiecutter.project_name}}" / "templates"
-TEMPLATE_NAME = "resources.qrc"
+TEMPLATE_NAME = "{{cookiecutter.resource_file_name}}"
 ICONS_DIR     = TEMPLATE_DIR.parent / "gui" / "icons"
 RC_FILE       = ICONS_DIR.parent / TEMPLATE_NAME
 # fmt: on
@@ -20,7 +20,7 @@ def list_all_icons() -> Generator[Path, None, None]:
 
 def write_resource_file() -> None:
     # fmt: off
-    env      = Environment(
+    env = Environment(
         loader        = FileSystemLoader(TEMPLATE_DIR),
         lstrip_blocks = True, # removes the spaces left from the comments at the start
     )

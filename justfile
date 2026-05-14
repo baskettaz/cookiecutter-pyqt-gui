@@ -8,7 +8,7 @@ alias b := build
 alias c := clean
 alias d := docs-serve
 alias t := test
-alias tc := type-check
+alias ty := type-check
 
 # Type check the project with ty
 type-check:
