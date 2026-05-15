@@ -75,7 +75,7 @@ ignore = [
 
 [tool.ty.src]
 exclude = [
-    "*cookiecutter.package_name*",
+    "*{{cookiecutter.package_name}}*",
 ]
 
 [tool.coverage.run]
@@ -102,10 +102,3 @@ include = [
     "hooks/",
     "{{cookiecutter.project_name}}/",
 ]
-
-[tool.hatch.build.targets.wheel]
-packages = ["{{cookiecutter.project_name}}"]
-
-[tool.hatch.build.targets.wheel.force-include]
-"cookiecutter.json" = "{{cookiecutter.project_name}}/cookiecutter.json"
-"hooks" = "{{cookiecutter.project_name}}/template/hooks"

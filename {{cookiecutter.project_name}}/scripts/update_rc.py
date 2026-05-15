@@ -7,7 +7,7 @@ from typing import Generator
 # Intentionally all relevant variables are set as global variables
 
 # fmt: off
-TEMPLATE_DIR  = Path(__file__).parent.parent / "{{cookiecutter.project_name}}" / "templates"
+TEMPLATE_DIR  = Path(__file__).parent.parent / "{{cookiecutter.package_name}}" / "templates"
 TEMPLATE_NAME = "resources.qrc"
 ICONS_DIR     = TEMPLATE_DIR.parent / "gui" / "icons"
 RC_FILE       = ICONS_DIR.parent / TEMPLATE_NAME
