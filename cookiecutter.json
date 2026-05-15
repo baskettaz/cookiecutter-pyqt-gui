@@ -8,7 +8,7 @@
   "project_version": "0.0.1",
 
   "_copy_without_render": [
-    "templates/*",
-    "templates/**/*"
+    "{{cookiecutter.package_name}}/templates/*",
+    "{{cookiecutter.package_name}}/templates/**/*"
   ]
 }
