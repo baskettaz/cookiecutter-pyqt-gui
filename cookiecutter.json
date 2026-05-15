@@ -5,5 +5,5 @@
   "project_name": "project_name",
   "package_name": "package_name",
   "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
-  "first_version": "0.0.1"
+  "project_version": "0.0.1"
 }
