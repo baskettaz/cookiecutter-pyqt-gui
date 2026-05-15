@@ -1,173 +1,33 @@
----
-icon: lucide/rocket
----
+# Cookiecutter PyPackage
 
-# Get started
+I built this template to give you everything a Python package needs, ready to go from the moment you generate it.
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
-
-## Commands
-
-* [`zensical new`][new] - Create a new project
-* [`zensical serve`][serve] - Start local web server
-* [`zensical build`][build] - Build your site
-
-  [new]: https://zensical.org/docs/usage/new/
-  [serve]: https://zensical.org/docs/usage/preview/
-  [build]: https://zensical.org/docs/usage/build/
-
-## Examples
-
-### Admonitions
-
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/)
-
-!!! note
-
-    This is a **note** admonition. Use it to provide helpful information.
-
-!!! warning
-
-    This is a **warning** admonition. Be careful!
-
-### Details
-
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/#collapsible-blocks)
-
-??? info "Click to expand for more info"
-
-    This content is hidden until you click to expand it.
-    Great for FAQs or long explanations.
-
-## Code Blocks
-
-> Go to [documentation](https://zensical.org/docs/authoring/code-blocks/)
-
-``` python hl_lines="2" title="Code blocks"
-def greet(name):
-    print(f"Hello, {name}!") # (1)!
-
-greet("Python")
+```bash
+uvx cookiecutter-pypackage
 ```
 
-1.  > Go to [documentation](https://zensical.org/docs/authoring/code-blocks/#code-annotations)
+Answer a few [prompts](prompts.md) and you'll have a complete project: source code with a CLI, a test suite, a documentation site, and CI/CD that handles linting, type checking, testing, and publishing to PyPI.
 
-    Code annotations allow to attach notes to lines of code.
+## Your project comes ready with
 
-Code can also be highlighted inline: `#!python print("Hello, Python!")`.
+**A real development workflow.** [uv](https://docs.astral.sh/uv/) manages your dependencies and virtual environments. [just](https://github.com/casey/just) gives you one command for everything: `just qa` formats your code with [ruff](https://docs.astral.sh/ruff/), lints it, type-checks with [ty](https://docs.astral.sh/ty/), and runs your [pytest](https://docs.pytest.org/) suite across Python 3.12, 3.13, and 3.14. A [Typer](https://typer.tiangolo.com/) CLI is wired up and working from the first `uv sync`.
 
-## Content tabs
+**A documentation site that deploys itself.** [Zensical](https://zensical.org/) builds your docs with the Material theme, light and dark mode, and [mkdocstrings](https://mkdocstrings.github.io/) generates API reference pages from your docstrings. Push to main and it's live on GitHub Pages. Preview locally with `just docs-serve`.
 
-> Go to [documentation](https://zensical.org/docs/authoring/content-tabs/)
+**Automated PyPI publishing with no tokens to manage.** Push a `v*` tag and GitHub Actions builds your package, signs it with [Sigstore](https://docs.pypi.org/attestations/), and publishes via [Trusted Publishers](https://docs.pypi.org/trusted-publishers/). OIDC handles authentication, so there are no API tokens to create, rotate, or leak.
 
-=== "Python"
+**Security-hardened CI you don't have to think about.** Every GitHub Action is pinned by SHA. Permissions are minimal. Credentials aren't persisted after checkout. [Dependabot](https://docs.github.com/en/code-security/dependabot) opens PRs weekly to keep your actions current. See [GitHub Actions](github_actions.md) for the full details.
 
-    ``` python
-    print("Hello from Python!")
-    ```
+**Coverage that works the way coverage.py intends.** Branch coverage, parallel mode, cross-version combining across Python 3.12, 3.13, and 3.14, and a `fail_under` floor you raise as your project grows. CI collects coverage from every Python version and posts a combined report to the GitHub Actions summary.
 
-=== "Rust"
+**A clean project structure.** [src layout](project_structure.md) so you never accidentally import local code during testing. A [py.typed](https://peps.python.org/pep-0561/) marker and type hints on all starter code. `__main__.py` so your package works with `python -m`. A focused .gitignore instead of the 200-line GitHub default.
 
-    ``` rs
-    println!("Hello from Rust!");
-    ```
+**Justfile commands for everything.** `just qa` is the daily driver, but there's also `just test`, `just testall`, `just type-check-watch`, `just coverage`, `just docs-serve`, `just tag`, and more. Run `just list` to see them all. See [Project Structure](project_structure.md#justfile-commands) for the full table.
 
-## Diagrams
+**Your name on it.** The generated README includes a bold "Created by" line linking to your GitHub profile, PyPI profile, and personal website. You built the package, you should get the credit.
 
-> Go to [documentation](https://zensical.org/docs/authoring/diagrams/)
+## Get started
 
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
+The [Tutorial](tutorial.md) walks you through everything: generating your package, running the tests, pushing to GitHub, deploying your docs, and publishing your first release to PyPI.
 
-## Footnotes
-
-> Go to [documentation](https://zensical.org/docs/authoring/footnotes/)
-
-Here's a sentence with a footnote.[^1]
-
-Hover it, to see a tooltip.
-
-[^1]: This is the footnote.
-
-
-## Formatting
-
-> Go to [documentation](https://zensical.org/docs/authoring/formatting/)
-
-- ==This was marked (highlight)==
-- ^^This was inserted (underline)^^
-- ~~This was deleted (strikethrough)~~
-- H~2~O
-- A^T^A
-- ++ctrl+alt+del++
-
-## Icons, Emojis
-
-> Go to [documentation](https://zensical.org/docs/authoring/icons-emojis/)
-
-* :sparkles: `:sparkles:`
-* :rocket: `:rocket:`
-* :tada: `:tada:`
-* :memo: `:memo:`
-* :eyes: `:eyes:`
-
-## Maths
-
-> Go to [documentation](https://zensical.org/docs/authoring/math/)
-
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
-
-!!! warning "Needs configuration"
-    Note that MathJax is included via a `script` tag on this page and is not
-    configured in the generated default configuration to avoid including it
-    in a pages that do not need it. See the documentation for details on how
-    to configure it on all your pages if they are more Maths-heavy than these
-    simple starter pages.
-
-<script id="MathJax-script" src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
-    }
-  };
-
-  document$.subscribe(() => {
-    MathJax.startup.output.clearCache()
-    MathJax.typesetClear()
-    MathJax.texReset()
-    MathJax.typesetPromise()
-  })
-</script>
-
-## Task Lists
-
-> Go to [documentation](https://zensical.org/docs/authoring/lists/#using-task-lists)
-
-* [x] Install Zensical
-* [x] Configure `zensical.toml`
-* [x] Write amazing documentation
-* [ ] Deploy anywhere
-
-## Tooltips
-
-> Go to [documentation](https://zensical.org/docs/authoring/tooltips/)
-
-[Hover me][example]
-
-  [example]: https://example.com "I'm a tooltip!"
+If something goes wrong, check [Troubleshooting](troubleshooting.md).

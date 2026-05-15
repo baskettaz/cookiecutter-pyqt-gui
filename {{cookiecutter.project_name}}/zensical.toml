@@ -11,34 +11,30 @@
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "Cookiecutter Qt6-Template"
+site_name = "Documentation"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_description
-site_description = "Cookiecutter template for a Python package"
+site_description = "A new project generated from the default template project."
 
 # The site_author attribute. This is used in the HTML head element.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_author
-site_author = "Vesselin Tsvetanov"
+site_author = "<your name here>"
 
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
 # Read more: https://zensical.org/docs/setup/basics/#site_url
 #site_url = "https://www.example.com/"
 
-#site_url = "https://baskettaz.github.io/cookiecutter-qt6-template/"
-#repo_url = "https://github.com/baskettaz/cookiecutter-pyqt-gui"
-#repo_name = "baskettaz/cookiecutter-pyqt-gui"
-
 # The copyright notice appears in the page footer and can contain an HTML
 # fragment.
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
 copyright = """
-Copyright &copy; 2026 - Vesselin Tsvetanov
+Copyright &copy; 2026 The authors
 """
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
@@ -48,15 +44,11 @@ Copyright &copy; 2026 - Vesselin Tsvetanov
 # can be defined using TOML syntax.
 #
 # Read more: https://zensical.org/docs/setup/navigation/
-nav = [
-    { "Home" = "index.md" },
-    { "Tutorial" = "tutorial.md" },
-    { "Project Structure" = "project_structure.md" },
-    { "GitHub Actions" = "github_actions.md" },
-    { "Prompts" = "prompts.md" },
-    { "Design Decisions" = "design_decisions.md" },
-    { "Troubleshooting" = "troubleshooting.md" },
-]
+# nav = [
+#   { "Get started" = "index.md" },
+#   { "Markdown in 5min" = "markdown.md" },
+# ]
+
 # With the "extra_css" option you can add your own CSS styling to customize
 # your Zensical project according to your needs. You can add any number of
 # CSS files.
@@ -296,15 +288,13 @@ features = [
 # - https://zensical.org/docs/setup/colors/
 # ----------------------------------------------------------------------------
 [[project.theme.palette]]
-media = "(prefers-color-scheme: light)"
 scheme = "default"
-toggle.icon = "material/brightness-7"
+toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
 
 [[project.theme.palette]]
-media = "(prefers-color-scheme: dark)"
 scheme = "slate"
-toggle.icon = "material/brightness-4"
+toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
 
 # ----------------------------------------------------------------------------

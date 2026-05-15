@@ -32,7 +32,7 @@ def main() -> None:
     notes = "".join(lines).rstrip()
 
     # fmt: off
-    # CMD 1: Create an unsigned
+    # CMD 1: Create a tag and commit it
     execute(
     "git",
         "tag",
