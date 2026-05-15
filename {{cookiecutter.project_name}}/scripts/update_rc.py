@@ -9,7 +9,9 @@ from typing import Generator
 # fmt: off
 TEMPLATE_DIR  = Path(__file__).parent.parent / "{{cookiecutter.package_name}}" / "templates"
 TEMPLATE_NAME = "resources.qrc"
-ICONS_DIR     = TEMPLATE_DIR.parent / "gui" / "icons"
+print(f"---> {TEMPLATE_DIR}")
+# ICONS_DIR     = TEMPLATE_DIR.parent / "gui" / "icons"
+ICONS_DIR     = "."
 RC_FILE       = ICONS_DIR.parent / TEMPLATE_NAME
 # fmt: on
 
