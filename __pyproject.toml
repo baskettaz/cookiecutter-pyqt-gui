@@ -1,5 +1,5 @@
 [project]
-name = "cookiecutter-pyqt-gui"
+name = "pyqt6template"
 version = "0.0.1"
 description = "Template for GUI projects with usage of PyQt6"
 readme = "README.md"

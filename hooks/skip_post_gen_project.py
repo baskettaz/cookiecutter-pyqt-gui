@@ -148,7 +148,7 @@ IMPORT_NAME = "{{ cookiecutter.import_name }}"
 FIRST_VERSION = "{{ cookiecutter.first_version }}"
 
 COMMIT_MESSAGE = f"""\
-https://github.com/audreyfeldroy/cookiecutter-pypackage scaffolding
+https://github.com/baskettaz/cookiecutter-pyqt-gui
 
 - src/{IMPORT_NAME} package with __init__, __main__, cli, utils, py.typed
 - tests/test_{IMPORT_NAME}.py
