@@ -1,11 +1,12 @@
 # Cookiecutter pyqt6 - Template
 
 I built this template to reduce the friction of starting a new PyQt6 project.
+It is a clone of the [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage), but with PyQt6 and a few other tweaks to make it a better fit for GUI applications.
 It includes everything I reach for in my own projects, all configured and working together from the start (highly opinionated).
 The goal is to get you from zero to a fully working project with CI/CD in just a few minutes.
 
 Answer a few [prompts](prompts.md) and you'll have a complete project: source code with a CLI, a test suite, a documentation site, and CI/CD that handles linting, type checking, testing.
-For the current version the publishing to PyPI is of no concern.
+For the current version the publishing to PyPI is of no concern, but will be updated in the future.
 
 ## Your project comes ready with
 

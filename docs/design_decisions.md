@@ -14,7 +14,7 @@ Pre-commit hooks punish frequent committers. If you commit every 5 minutes (good
 
 ## ruff, not black + isort + flake8
 
-[Ruff](https://docs.astral.sh/ruff/) replaces three tools with one. It formats (replacing black), sorts imports (replacing isort), and lints (replacing flake8 and its plugin ecosystem). Configuration is one `[tool.ruff]` section in `pyproject.toml` instead of three separate configs.
+[ruff](https://docs.astral.sh/ruff/) replaces three tools with one. It formats (replacing black), sorts imports (replacing isort), and lints (replacing flake8 and its plugin ecosystem). Configuration is one `[tool.ruff]` section in `pyproject.toml` instead of three separate configs.
 
 ## ty, not mypy
 
@@ -26,7 +26,8 @@ Pre-commit hooks punish frequent committers. If you commit every 5 minutes (good
 
 ## No tox
 
-`uv run --python=3.12 pytest` runs tests on a specific Python version. The justfile's `testall` command runs across 3.12, 3.13, and 3.14. CI does the same in a matrix. tox was valuable when managing multiple virtualenvs was hard. uv makes it trivial.
+`uv run --python=3.12 pytest` runs tests on a specific Python version. The justfile's `testall` command runs across different versions, currently 3.14 only.
+CI does the same in a matrix. tox was valuable when managing multiple virtualenvs was hard. uv makes it trivial.
 
 ## Zensical, not Sphinx
 
@@ -48,10 +49,11 @@ The publish workflow disables uv's built-in cache. GitHub Actions caches aren't 
 
 Coverage runs in CI with branch coverage, parallel mode, and cross-version combining across Python 3.12, 3.13, and 3.14. The report posts to the GitHub Actions summary. No external service to sign up for, no tokens to configure, no third-party access to your repo.
 
-## src layout, not flat layout
+## project_name layout, not flat layout
 
-Your package code lives under `src/`, not at the repo root. This prevents tests from accidentally importing local source files instead of the installed package. It's a few extra characters in import paths, but it eliminates an entire class of "works on my machine" bugs.
+Your package code lives under `project_name/`, not at the repo root. This prevents tests from accidentally importing local source files instead of the installed package. It's a few extra characters in import paths, but it eliminates an entire class of "works on my machine" bugs.
 
 ## Focused .gitignore, not the kitchen sink
 
-The generated `.gitignore` covers what a Python package actually produces: `__pycache__`, `.venv`, `dist/`, `*.egg-info`, coverage files, and docs build output. GitHub's default Python `.gitignore` is 200+ lines of entries for tools you might never use.
+The generated `.gitignore` covers what a Python package actually produces: `__pycache__`, `.venv`, `dist/`, `*.egg-info`, coverage files, and docs build output.
+GitHub's default Python `.gitignore` is 200+ lines of entries for tools you might never use.

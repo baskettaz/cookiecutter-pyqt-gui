@@ -2,6 +2,8 @@
 
 After generating your package, you'll have a project that looks like this:
 
+**TODO: Update the project_structure**
+
 ```
 my-package/
 ├── .github/
@@ -46,11 +48,11 @@ my-package/
 └── zensical.toml           # Documentation site config
 ```
 
-## Source code (`src/`)
+## Source code (`project_name/`)
 
-The project uses a **src layout**, where your package code lives under `src/` rather than at the root. This prevents accidentally importing local code during testing, which is a common source of subtle bugs.
+The project uses a **project_name layout**, where your package code lives under `project_name/` rather than at the root. This prevents accidentally importing local code during testing, which is a common source of subtle bugs.
 
-Put your code in `src/my_package/`. The `utils.py` file is a placeholder to get you started. Rename it, delete it, or add new modules alongside it.
+Put your code in `project_name/package_name/`. The `utils.py` file is a placeholder to get you started. Rename it, delete it, or add new modules alongside it.
 
 ## CLI (`cli.py`)
 
@@ -67,6 +69,8 @@ The entry point is configured in `pyproject.toml` under `[project.scripts]`. To 
 ## Justfile commands
 
 Run `just list` to see all available commands. The key ones:
+
+**TODO: Update to te current justfile commands**
 
 | Command | What it does |
 |---|---|
@@ -98,6 +102,6 @@ The post-generation hook enables GitHub Pages automatically. If it couldn't, go 
 Tool configuration lives in `pyproject.toml`:
 
 - **Dependency groups**: `dev` (includes lint, test, typecheck), `docs` (zensical, mkdocstrings)
-- **Ruff**: line length 120, rules for pycodestyle, Pyflakes, isort, flake8-bugbear, pyupgrade
+- **ruff**: line length 120, rules for pycodestyle, Pyflakes, isort, flake8-bugbear, pyupgrade
 - **ty**: all rules enabled as errors by default. To relax a rule, uncomment the example in `[tool.ty]`
 - **uv**: package mode enabled, dev groups installed by default

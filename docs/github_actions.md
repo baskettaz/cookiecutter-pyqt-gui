@@ -8,7 +8,7 @@ Runs on every push to `main` and on pull requests. Five jobs:
 
 - **Lint** - checks formatting (`ruff format --check`) and lint rules (`ruff check`)
 - **Type check** - runs [ty](https://docs.astral.sh/ty/) for static type checking
-- **Test** - runs pytest with coverage across Python 3.12, 3.13, and 3.14
+- **Test** - runs pytest with coverage for Python 3.14
 - **Coverage** - combines coverage data from all Python versions and posts the report to the GitHub Actions step summary
 - **All checks pass** - a single status check for branch protection (uses [alls-green](https://github.com/re-actors/alls-green))
 

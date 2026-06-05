@@ -1,7 +1,7 @@
+from collections.abc import Generator
 from pathlib import Path
-from jinja2 import Environment
-from jinja2 import FileSystemLoader
-from typing import Generator
+
+from jinja2 import Environment, FileSystemLoader
 
 # Note:
 # Intentionally all relevant variables are set as global variables
@@ -14,7 +14,7 @@ RC_FILE       = ICONS_DIR.parent / TEMPLATE_NAME
 # fmt: on
 
 
-def list_all_icons() -> Generator[Path, None, None]:
+def list_all_icons() -> Generator[Path]:
     yield from (file for file in ICONS_DIR.iterdir() if file.is_file())
 
 

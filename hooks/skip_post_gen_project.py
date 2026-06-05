@@ -144,14 +144,15 @@ def create_pypi_environment():
         print("  Create manually: Settings > Environments > New environment > pypi")
 
 
-IMPORT_NAME = "{{ cookiecutter.import_name }}"
+PROJECT_NAME = "{{ cookiecutter.project_name }}"
+PACKAGE_NAME = "{{ cookiecutter.package_name }}"
 FIRST_VERSION = "{{ cookiecutter.first_version }}"
 
 COMMIT_MESSAGE = f"""\
 https://github.com/baskettaz/cookiecutter-pyqt-gui
 
-- src/{IMPORT_NAME} package with __init__, __main__, cli, utils, py.typed
-- tests/test_{IMPORT_NAME}.py
+- {PROJECT_NAME}/{PACKAGE_NAME} package with __init__, __main__, cli, utils, py.typed
+- tests/test_{PACKAGE_NAME}.py
 - docs/ with index, installation, usage, api pages
 - GitHub CI workflows: ci, codeql, docs, publish, zizmor
 - GitHub issue templates: bug report, feature request
