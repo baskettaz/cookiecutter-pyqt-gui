@@ -4,7 +4,7 @@ By the end of this tutorial, you'll have a Python package with a working CLI, a 
 
 ## Prerequisites
 
-- Python 3.12 or higher
+- Python 3.14 or higher
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)
 - [just](https://github.com/casey/just#installation) (task runner)
 - [git](https://git-scm.com/)

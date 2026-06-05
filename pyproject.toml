@@ -58,7 +58,7 @@ docs = [
 [tool.ruff]
 exclude = [
     "*cookiecutter.package_name*"
-    ]
+]
 
 [tool.ruff.lint]
 select = [
