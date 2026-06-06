@@ -3,49 +3,63 @@
 After generating your package, you'll have a project that looks like this:
 
 **TODO: Update the project_structure**
-
 ```
-my-package/
-├── .github/
-│   ├── dependabot.yml
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.yml
-│   │   ├── config.yml
-│   │   └── feature_request.yml
-│   ├── pull_request_template.md
-│   └── workflows/
-│       ├── ci.yml          # Lint, type check, test
-│       ├── codeql.yml      # Security analysis
-│       ├── docs.yml        # Build and deploy docs
-│       ├── publish.yml     # Publish to PyPI on tag
-│       └── zizmor.yml      # Workflow security audit
-├── docs/
-│   ├── api.md              # Auto-generated API reference
-│   ├── index.md            # Docs landing page
-│   ├── installation.md
-│   └── usage.md
-├── src/
-│   └── my_package/
-│       ├── __init__.py
-│       ├── __main__.py     # Enables `python -m my_package`
-│       ├── cli.py          # Typer CLI
-│       ├── py.typed        # Type annotation marker (PEP 561)
-│       └── utils.py        # Placeholder, rename or delete
-├── tests/
-│   └── test_my_package.py
-├── scripts/
-│   └── release.py          # Version bump, tag, and push
-├── .editorconfig
-├── .gitignore
-├── CHANGELOG/              # One file per release (e.g. 0.1.0.md)
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── justfile                # Task runner commands
-├── LICENSE
-├── pyproject.toml          # Package metadata and tool config
-├── README.md
-├── SECURITY.md
-└── zensical.toml           # Documentation site config
+├───{{cookiecutter.project_name}}
+│   .editorconfig
+│   .gitignore
+│   .python-version
+│   CODE_OF_CONDUCT.md
+│   LICENSE
+│   pyproject.toml
+│   uv.lock
+│   zensical.toml
+│   __init__.py
+│   __main__.py
+│
+├───.github
+│   │   dependabot.yml
+│   │   pull_request_template.md
+│   │
+│   ├───ISSUE_TEMPLATE
+│   │       bug_report.yml
+│   │       config.yml
+│   │       feature_request.yml
+│   │
+│   └───workflows
+│           ci.yml
+│           codeql.yml
+│           docs.yml
+│           publish.yml
+│           zizmor.yml
+│
+├───CHANGELOG
+├───docs
+│       index.md
+│       markdown.md
+│
+├───scripts
+│       release.py
+│       update_rc.py
+│       utils.py
+│       __init__.py
+│
+├───tests
+└───{{cookiecutter.package_name}}
+    │   __init__.py
+    │   __main__.py
+    │
+    ├───cli
+    ├───containers
+    ├───core
+    ├───gui
+    │   │   resources.qrc
+    │   │
+    │   ├───icons
+    │   └───pictures
+    ├───templates
+    │       resources.qrc
+    │
+    └───utilities
 ```
 
 ## Source code (`project_name/`)

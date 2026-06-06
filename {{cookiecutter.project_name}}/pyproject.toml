@@ -52,6 +52,9 @@ tools = [
 docs = [
     "zensical",
 ]
+pyinstaller = [
+    "pyinstaller",
+]
 
 
 [tool.ruff]

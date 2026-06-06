@@ -5,8 +5,8 @@ import os
 import shutil
 import subprocess
 
-OWNER = "{{ cookiecutter.github_repo_owner }}"
-REPO = "{{ cookiecutter.package_name }}"
+OWNER = "{{ cookiecutter.github_username }}"
+REPO = "{{ cookiecutter.project_name }}"
 
 
 def create_github_repo():
