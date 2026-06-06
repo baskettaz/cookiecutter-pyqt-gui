@@ -39,7 +39,7 @@ def create_github_repo():
                 f"{OWNER}/{REPO}",
                 visibility,
                 "--description",
-                "{{ cookiecutter.project_short_description | replace('\"', '\\\"') }}",
+                "{{ cookiecutter.project_description | replace('\"', '\\\"') }}",
             ],
             capture_output=True,
             text=True,
