@@ -146,7 +146,7 @@ def create_pypi_environment():
 
 PROJECT_NAME = "{{ cookiecutter.project_name }}"
 PACKAGE_NAME = "{{ cookiecutter.package_name }}"
-FIRST_VERSION = "{{ cookiecutter.first_version }}"
+FIRST_VERSION = "{{ cookiecutter.project_version }}"
 
 COMMIT_MESSAGE = f"""\
 https://github.com/baskettaz/cookiecutter-pyqt-gui
