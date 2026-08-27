@@ -95,6 +95,24 @@ clean-test:
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+# recreates the .qrc file for the new icons
+update-resources:
+    uv run python "$(pwd)/scripts/update_rc.py"
+    @echo "===] Resource file (QRC) updated"
+
+# compiles all the resources to the binary format
+# Note: Still using pyrcc5, because there is no such distributed utility with PyQt6
+pyrcc5:
+    pyrcc5 ./{{cookiecutter.package_name}}/gui/resources.qrc -o ./{{cookiecutter.package_name}}/gui/resources_rc.py
+    @echo "===] Resource file compiled"
+
+# Update all qt-resources
+update-qt:
+    just update-resources
+    just pyrcc5
+
+
+
 # Publish to PyPI (manual alternative to GitHub Actions)
 publish:
     uv build
