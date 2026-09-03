@@ -47,7 +47,6 @@ pdb *ARGS:
 # Run tests with coverage across all supported Python versions
 coverage:
     uv run --python=3.14 coverage run -m pytest
-    uv run --python=3.14 coverage combine
     uv run --python=3.14 coverage report
     uv run --python=3.14 coverage html
 
@@ -111,7 +110,10 @@ update-qt:
     just update-resources
     just pyrcc5
 
-
+# Update uv dependencies
+uv-update:
+    uv lock --upgrade
+    uv sync
 
 # Publish to PyPI (manual alternative to GitHub Actions)
 publish:

@@ -85,7 +85,8 @@ exclude = [
 branch = true
 parallel = true
 source = ["{{ cookiecutter.package_name }}/"]
-data_file = "docs/coverage/.coverage"
+data_file = "docs/reports/.coverage"
+omit = ["test/*"]
 
 
 [tool.coverage.report]
@@ -93,7 +94,7 @@ show_missing = true
 skip_covered = false
 
 [tool.coverage.html]
-directory = "docs/coverage"
+directory = "docs/reports"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
